@@ -1,0 +1,15 @@
+import HautevilleHouse.DynamicalSystemsInvolvingTransformationsGroupTheoremCanonicalLaneLean.TransformationsGroupAction
+import HautevilleHouse.DynamicalSystemsInvolvingTransformationsGroupTheoremCanonicalLaneLean.OrbitStabilizerBridge
+
+namespace HautevilleHouse
+namespace DynamicalSystemsInvolvingTransformationsGroupTheoremCanonicalLaneLean
+
+def ConstrainedTransformationsGroupClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_transformations_group_endgame (A : AdmissibleClass) :
+    ConstrainedTransformationsGroupClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsInvolvingTransformationsGroupTheoremCanonicalLaneLean
+end HautevilleHouse
